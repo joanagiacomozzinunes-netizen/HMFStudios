@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Loja Geek — HQs, Action Figures e Posters</title>
-  <meta name="description" content="Loja online de colecionáveis: quadrinhos (HQs), action figures e pôsteres de personagens. Site exemplo pronto para GitHub Pages.">
+  <title>HomeMadeFiction — HQs, Action Figures e Posters</title>
+  <meta name="description" content="HomeMadeFiction: loja online de quadrinhos, action figures e pôsteres originais de personagens.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#071022 0%, #081226 60%); color:#e6edf3; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#071022 0%, #081226 60%); color:#e6edf3;
       display:flex; justify-content:center; padding:32px 16px;
     }
     .container{width:100%; max-width:var(--maxw)}
@@ -54,38 +54,25 @@
 
     footer{margin-top:30px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
 
-    /* Responsive */
-    @media (max-width:1000px){
-      .products{grid-template-columns:repeat(2,1fr)}
-      .hero{grid-template-columns:1fr}
-    }
-    @media (max-width:640px){
-      .products{grid-template-columns:1fr}
-      .search input{width:120px}
-      .cart{width:90%;left:50%;transform:translateX(-50%);right:auto}
-    }
-
-    /* small helper */
-    .muted{color:var(--muted)}
-    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02)}
-
+    @media (max-width:1000px){.products{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}}
+    @media (max-width:640px){.products{grid-template-columns:1fr}.search input{width:120px}.cart{width:90%;left:50%;transform:translateX(-50%);right:auto}}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <div class="logo">G</div>
+        <div class="logo">HF</div>
         <div>
-          <h1>Loja Geek</h1>
+          <h1>HomeMadeFiction</h1>
           <div class="muted" style="font-size:12px">HQs • Action Figures • Posters</div>
         </div>
       </div>
 
       <nav>
         <div class="search">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.5"></circle></svg>
-          <input id="searchInput" placeholder="Buscar quadrinhos, figuras, pôsteres..." />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.5" d="M21 21l-4.35-4.35"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.5"></circle></svg>
+          <input id="searchInput" placeholder="Buscar produtos..." />
         </div>
         <button class="btn" id="resetBtn">Limpar</button>
       </nav>
@@ -94,68 +81,54 @@
     <main>
       <section class="hero">
         <div class="hero-card">
-          <h2>Bem-vindo à Loja Geek</h2>
-          <p>Catálogo curado de HQs raras, action figures de alta qualidade e pôsteres para decorar seu espaço. Navegue, filtre e adicione ao carrinho — pronto para GitHub Pages.</p>
+          <h2>Bem-vindo à HomeMadeFiction</h2>
+          <p>Loja geek com HQs exclusivas, action figures e pôsteres de personagens originais criados por artistas independentes.</p>
           <div class="categories">
             <button class="chip" data-cat="all">Todos</button>
             <button class="chip" data-cat="hq">HQs</button>
             <button class="chip" data-cat="fig">Action Figures</button>
             <button class="chip" data-cat="poster">Pôsteres</button>
-            <button class="chip" data-cat="promo">Promoções</button>
           </div>
         </div>
 
         <aside class="hero-card">
-          <h3>Ofertas da semana</h3>
-          <div style="margin-top:12px">
-            <div class="tag">Frete grátis a partir de R$199</div>
-            <p class="muted" style="margin-top:12px">Compre combos e economize. Pagamento via boleto, cartão ou pix (simulação).</p>
-          </div>
+          <h3>Novidades da Semana</h3>
+          <p class="muted">Confira as novas ilustrações e pôsteres adicionados à coleção HomeMadeFiction.</p>
         </aside>
       </section>
 
       <section>
         <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:12px">
-          <h2 style="margin:0">Produtos</h2>
+          <h2 style="margin:0">Pôsteres Originais</h2>
           <div class="muted">Mostrando <span id="count">0</span> produtos</div>
         </div>
 
         <div class="products" id="productsGrid"></div>
       </section>
-
     </main>
 
     <footer>
-      <div>© <span id="year"></span> Loja Geek — Exemplo para GitHub Pages</div>
-      <div class="muted">Desenvolvido com ❤️ — personalize imagens e preços antes de publicar.</div>
+      <div>© <span id="year"></span> HomeMadeFiction</div>
+      <div class="muted">Arte independente — todos os direitos reservados.</div>
     </footer>
-
   </div>
 
-  <!-- Carrinho simples -->
   <aside class="cart" id="cart">
     <h3>Carrinho</h3>
-    <div class="items" id="cartItems">
-      <div class="muted">Seu carrinho está vazio</div>
-    </div>
+    <div class="items" id="cartItems"><div class="muted">Seu carrinho está vazio</div></div>
     <div class="checkout">
-      <div>
-        <div class="muted">Total</div>
-        <div id="cartTotal">R$0,00</div>
-      </div>
+      <div><div class="muted">Total</div><div id="cartTotal">R$0,00</div></div>
       <button class="btn" id="checkoutBtn">Finalizar</button>
     </div>
   </aside>
 
   <script>
-    // Dados de exemplo (substitua por JSON real ou integração com backend)
     const products = [
-      {id:1, title:'Saga - Volume 1 (HQ)', category:'hq', price:79.90, img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60'},
-      {id:2, title:'Action Figure — Guardião 1/8', category:'fig', price:399.90, img:'https://images.unsplash.com/photo-1583224646316-8a3c6d1a0c4d?auto=format&fit=crop&w=800&q=60'},
-      {id:3, title:'Pôster — Cidade Neon 50x70', category:'poster', price:59.90, img:'https://images.unsplash.com/photo-1510070009289-b5bc34383727?auto=format&fit=crop&w=800&q=60'},
-      {id:4, title:'Conjunto de Posters — Heróis', category:'poster', price:129.90, img:'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=60'},
-      {id:5, title:'HQ — O Último Dia', category:'hq', price:49.90, img:'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=60'},
-      {id:6, title:'Action Figure — Antigo Guerreiro', category:'fig', price:259.90, img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60'}
+      {id:1, title:'Pôster — Vigilante Futurista', category:'poster', price:59.90, img:'img/vigilante-futurista.jpg'},
+      {id:2, title:'Pôster — Espadachim Verde', category:'poster', price:59.90, img:'img/espadachim-verde.jpg'},
+      {id:3, title:'Pôster — Samurai das Sombras', category:'poster', price:59.90, img:'img/samurai-das-sombras.jpg'},
+      {id:4, title:'Pôster — Kozuki', category:'poster', price:59.90, img:'img/kozuki.jpg'},
+      {id:5, title:'Pôster — Zumokama', category:'poster', price:59.90, img:'img/zumokama.jpg'}
     ];
 
     const productsGrid = document.getElementById('productsGrid');
@@ -165,28 +138,17 @@
 
     const cart = [];
 
-    function formatBRL(v){
-      return v.toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
-    }
+    function formatBRL(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
 
     function renderProducts(list){
       productsGrid.innerHTML='';
       list.forEach(p=>{
         const el = document.createElement('article'); el.className='card';
         el.innerHTML = `
-          <a class="thumb" href="#" data-id="${p.id}"><img src="${p.img}" alt="${p.title}" loading="lazy"></a>
-          <div>
-            <div class="title">${p.title}</div>
-            <div class="meta">Categoria: ${p.category.toUpperCase()} • Código: #${p.id}</div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-              <div class="price">${formatBRL(p.price)}</div>
-              <div class="tag">Em estoque</div>
-            </div>
-          </div>
-          <div class="actions">
-            <button class="btn" data-add="${p.id}">Adicionar</button>
-            <button class="chip" data-view="${p.id}">Ver</button>
-          </div>
+          <a class="thumb"><img src="${p.img}" alt="${p.title}" loading="lazy"></a>
+          <div class="title">${p.title}</div>
+          <div class="price">${formatBRL(p.price)}</div>
+          <div class="actions"><button class="btn" data-add="${p.id}">Adicionar</button></div>
         `;
         productsGrid.appendChild(el);
       });
@@ -194,70 +156,26 @@
     }
 
     function updateCartUI(){
-      const itemsEl = document.getElementById('cartItems');
-      itemsEl.innerHTML = '';
-      if(cart.length===0){ itemsEl.innerHTML = '<div class="muted">Seu carrinho está vazio</div>'; document.getElementById('cartTotal').textContent = formatBRL(0); return; }
-      let total = 0;
+      const itemsEl=document.getElementById('cartItems');
+      itemsEl.innerHTML='';
+      if(cart.length===0){itemsEl.innerHTML='<div class="muted">Seu carrinho está vazio</div>';document.getElementById('cartTotal').textContent=formatBRL(0);return;}
+      let total=0;
       cart.forEach(item=>{
-        total += item.qty * item.price;
-        const div = document.createElement('div');
-        div.style.display='flex'; div.style.justifyContent='space-between'; div.style.alignItems='center';
-        div.innerHTML = `<div><strong>${item.title}</strong><div class="muted" style="font-size:12px">${item.qty} x ${formatBRL(item.price)}</div></div><div><button class="chip" data-dec="${item.id}">-</button><button class="chip" data-inc="${item.id}">+</button></div>`;
+        total+=item.qty*item.price;
+        const div=document.createElement('div');
+        div.innerHTML=`<div><strong>${item.title}</strong><div class="muted" style="font-size:12px">${item.qty} x ${formatBRL(item.price)}</div></div>`;
         itemsEl.appendChild(div);
       });
-      document.getElementById('cartTotal').textContent = formatBRL(total);
+      document.getElementById('cartTotal').textContent=formatBRL(total);
     }
 
-    // inicial render
     renderProducts(products);
     updateCartUI();
 
-    // event delegation
-    document.body.addEventListener('click', e =>{
-      const add = e.target.closest('[data-add]');
-      const inc = e.target.closest('[data-inc]');
-      const dec = e.target.closest('[data-dec]');
-      const view = e.target.closest('[data-view]');
-      const chip = e.target.closest('.chip[data-cat]');
-      if(add){ const id = Number(add.dataset.add); addToCart(id); }
-      if(inc){ const id = Number(inc.dataset.inc); changeQty(id,1); }
-      if(dec){ const id = Number(dec.dataset.dec); changeQty(id,-1); }
-      if(view){ e.preventDefault(); const id = Number(view.dataset.view); alert('Visualizar produto ID: '+id+' (implemente página de produto)'); }
-      if(chip){ const cat = chip.dataset.cat; filterBy(cat); }
+    document.body.addEventListener('click',e=>{
+      const add=e.target.closest('[data-add]');
+      if(add){const id=Number(add.dataset.add);const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(c=>c.id===id);if(existing){existing.qty+=1;}else{cart.push({id:p.id,title:p.title,price:p.price,qty:1});}updateCartUI();}
     });
-
-    document.getElementById('resetBtn').addEventListener('click', ()=>{ document.getElementById('searchInput').value=''; renderProducts(products); });
-
-    document.getElementById('searchInput').addEventListener('input', e=>{
-      const q = e.target.value.toLowerCase().trim();
-      const filtered = products.filter(p=> p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
-      renderProducts(filtered);
-    });
-
-    function filterBy(cat){
-      if(cat==='all'){ renderProducts(products); return; }
-      renderProducts(products.filter(p=>p.category===cat));
-    }
-
-    function addToCart(id){
-      const p = products.find(x=>x.id===id); if(!p) return;
-      const existing = cart.find(c=>c.id===id);
-      if(existing){ existing.qty += 1; } else { cart.push({id:p.id, title:p.title, price:p.price, qty:1}); }
-      updateCartUI();
-    }
-
-    function changeQty(id, delta){
-      const idx = cart.findIndex(c=>c.id===id); if(idx===-1) return;
-      cart[idx].qty += delta; if(cart[idx].qty<=0) cart.splice(idx,1);
-      updateCartUI();
-    }
-
-    document.getElementById('checkoutBtn').addEventListener('click', ()=>{
-      if(cart.length===0){ alert('Adicione itens ao carrinho antes de finalizar.'); return; }
-      // Simular checkout
-      alert('Checkout simulado. Total: ' + document.getElementById('cartTotal').textContent + '\nImplemente integração com gateway de pagamento.');
-    });
-
   </script>
 </body>
-    </html>
+</html>
